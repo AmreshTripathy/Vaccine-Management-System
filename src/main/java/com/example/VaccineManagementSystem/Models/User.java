@@ -20,13 +20,13 @@ public class User {
 
     private int age;
 
-    @Enumerated(value = EnumType.STRING)
+//    @Enumerated(value = EnumType.STRING)
     private Gender gender;
 
-    @Column(name = "email_id", unique = true, nullable = false)
+    @Column(name = "email_id", unique = true)
     private String emailId;
 
-    @Column(name = "mobile_no", unique = true, nullable = false)
+    @Column(name = "mobile_no", unique = true)
     private String mobileNo;
 
     public int getUserId() {

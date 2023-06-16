@@ -23,6 +23,18 @@ public class Dose1 {
     @Column(name = "vaccination_date")
     private Date vaccinationDate;
 
+    @OneToOne
+    @JoinColumn
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public int getId() {
         return id;
     }
