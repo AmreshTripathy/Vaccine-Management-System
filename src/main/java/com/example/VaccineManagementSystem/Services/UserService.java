@@ -5,6 +5,8 @@ import com.example.VaccineManagementSystem.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * @author Amresh Tripathy
  */
@@ -18,5 +20,9 @@ public class UserService {
     public User addUser(User user) {
         user = userRepository.save(user);
         return user;
+    }
+
+    public Date getVaccinationDate(Integer id) {
+        return userRepository.findById(id).get().getDose().getVaccinationDate();
     }
 }

@@ -29,6 +29,17 @@ public class User {
     @Column(name = "mobile_no", unique = true)
     private String mobileNo;
 
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Dose dose;
+
+    public Dose getDose() {
+        return dose;
+    }
+
+    public void setDose(Dose dose) {
+        this.dose = dose;
+    }
+
     public int getUserId() {
         return userId;
     }

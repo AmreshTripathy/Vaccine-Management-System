@@ -3,10 +3,9 @@ package com.example.VaccineManagementSystem.Controllers;
 import com.example.VaccineManagementSystem.Models.User;
 import com.example.VaccineManagementSystem.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 /**
  * @author Amresh Tripathy
@@ -22,5 +21,10 @@ public class UserController {
     @PostMapping("/add")
     public User addUser(@RequestBody User user) {
         return userService.addUser(user);
+    }
+
+    @GetMapping("/getVaccinationDate")
+    public Date getVaccinationDate(@RequestParam(name = "userId") Integer id) {
+        return userService.getVaccinationDate(id);
     }
 }
