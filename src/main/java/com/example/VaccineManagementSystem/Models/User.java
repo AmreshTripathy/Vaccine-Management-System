@@ -20,7 +20,7 @@ public class User {
 
     private int age;
 
-//    @Enumerated(value = EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     @Column(name = "email_id", unique = true)
