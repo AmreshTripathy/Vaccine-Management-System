@@ -14,5 +14,4 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // just define the functions
     User findByEmailId(String emailId);
     //prebuilt functions : and you can use it directly...
-
 }
