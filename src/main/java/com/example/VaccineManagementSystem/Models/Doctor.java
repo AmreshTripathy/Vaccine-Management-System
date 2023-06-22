@@ -37,7 +37,7 @@ public class Doctor {
     @Column(name = "email_id", unique = true)
     private String emailId;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn
     private VaccinationCenter vaccinationCenter;
 

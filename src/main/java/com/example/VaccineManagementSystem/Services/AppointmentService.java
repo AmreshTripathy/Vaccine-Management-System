@@ -48,7 +48,7 @@ public class AppointmentService {
 
         // Creating the object and setting its attribute
         appointment.setAppointmentDate(appointmentReqDto.getAppintmentDate());
-        appointment.setAppointmentTime(appointment.getAppointmentTime());
+        appointment.setAppointmentTime(appointmentReqDto.getAppointmentTime());
 
         // Setting the foreign key attribute
         appointment.setDoctor(doctor);
