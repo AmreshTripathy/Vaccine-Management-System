@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Amresh Tripathy
  */
@@ -33,4 +36,11 @@ public class Doctor {
 
     @Column(name = "email_id", unique = true)
     private String emailId;
+
+    @ManyToMany
+    @JoinColumn
+    private VaccinationCenter vaccinationCenter;
+
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
+    private List<Appointment> appointmentList = new ArrayList<>();
 }
